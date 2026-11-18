@@ -58,6 +58,8 @@ tracked forks, and the standing setup notes.
 
 [mi50-p2p-fixes](https://github.com/DByte308/mi50-p2p-fixes) — DByte308's PCIe P2P write-up for the MI50 (X99 three-gate story + four-MI50 + 7900 XTX case study).
 
+[mi50-p2p-check.sh](https://github.com/hermesbradgharrison/gfx906-hub/raw/main/tools/mi50-p2p-check.sh) — run it on any MI50 box: gate-by-gate P2P diagnosis, every failure with a why+fix (`--deep` adds the byte-verified GPU-to-GPU copy).
+
 ### MI50 VBIOS reference
 
 [MI50 32GB VBIOS](https://gist.github.com/evilJazz/14a4c82a67f2c52a6bb5f9cea02f5e13)
