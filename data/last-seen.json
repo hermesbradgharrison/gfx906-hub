@@ -50,7 +50,7 @@
   "blocks": {
    "vllm": {
     "sha": "10d3897f2b1d723c7b50a2bb93e401e67df2e9a7",
-    "date": "2026-10-17"
+    "date": "2026-10-19"
    },
    "llamacpp": {
     "sha": "c163a5d9fc9cde907cf1de94df630f8ddf26f5af",
@@ -72,12 +72,12 @@
   "pushed_at": "2026-10-08"
  },
  "mxxm-t-mx-llama.cpp": {
-  "sha": "cdc81dae4f4362e0aeaeb99c90622b9de4504d53",
-  "prev": null,
-  "date": "2026-11-12",
+  "sha": "557a6068f4c5c8fb0ba9982d2a912eeeb2dcaa08",
+  "prev": "cdc81dae4f4362e0aeaeb99c90622b9de4504d53",
+  "date": "2026-11-18",
   "count": null,
-  "pushed_at": "2026-11-06",
-  "version": "b11757",
+  "pushed_at": "2026-11-18",
+  "version": "b12717",
   "version_url": null
  },
  "joochung-vllm-gfx906-mobydick": {
@@ -106,19 +106,19 @@
   "version_url": "https://github.com/phantomic12/ML-gfx906/releases/tag/20260802001858"
  },
  "hboyd2003-Strata": {
-  "sha": "3b54d622e34cd26ae81e10c754e872d25c8e32b3",
-  "prev": null,
-  "date": "2026-11-13",
+  "sha": "5958a5812c2f360ea58af3470200f400dc067bdb",
+  "prev": "3b54d622e34cd26ae81e10c754e872d25c8e32b3",
+  "date": "2026-11-18",
   "count": null,
-  "pushed_at": "2026-11-12",
+  "pushed_at": "2026-11-18",
   "version": "v0.2.13+0.5-gfx906",
   "version_url": "https://github.com/hboyd2003/Strata/releases/tag/v0.2.13%2B0.5-gfx906"
  },
  "Llaminar-llaminar": {
-  "sha": "454741b1b2228bc6874e46ade75bbf523a8385d5",
-  "prev": null,
-  "date": "2026-11-16",
-  "pushed_at": "2026-11-17",
+  "sha": "61f451871b734c4a6511a8d7d60135b040a28808",
+  "prev": "454741b1b2228bc6874e46ade75bbf523a8385d5",
+  "date": "2026-11-19",
+  "pushed_at": "2026-11-19",
   "version": "2026-09-27.1",
   "version_url": "https://github.com/Llaminar/llaminar/releases/tag/2026-09-27.1"
  },
@@ -139,9 +139,9 @@
   "version_url": null
  },
  "AlwaysLearning-dev-gfx906-llama-cpp": {
-  "sha": "77941dd7acad8e9932a5e7e147befe8706e73e77",
-  "prev": null,
-  "date": "2026-11-17",
-  "pushed_at": "2026-11-17"
+  "sha": "36e84ddb7e5792af6994ee79e12452ba4c918e63",
+  "prev": "77941dd7acad8e9932a5e7e147befe8706e73e77",
+  "date": "2026-11-20",
+  "pushed_at": "2026-11-20"
  }
 }
