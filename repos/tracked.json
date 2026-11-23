@@ -198,6 +198,17 @@
    "role": "llama.cpp for dual MI50 tensor split (DFlash2 speculative decoding); tracked on the dev_v2 branch (newest, in testing)",
    "status": "active",
    "category": "llamacpp"
+  },
+  {
+   "id": "rayakame-llama.cpp-gfx906",
+   "focus": "single-MI50 llama.cpp for Qwen3.8 27B with MTP drafting \u2014 kernels tuned for every quant that fits (Q8_0 down to IQ3)",
+   "owner": "rayakame",
+   "name": "llama.cpp-gfx906",
+   "remote": "https://github.com/rayakame/llama.cpp-gfx906",
+   "ref": "HEAD",
+   "role": "llama.cpp tuned for Qwen3.8 27B on the AMD Instinct MI50 (gfx906)",
+   "status": "active",
+   "category": "llamacpp"
   }
  ]
 }
