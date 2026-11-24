@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.request
@@ -27,10 +28,10 @@ REFRESHED = ("pushed_at", "version", "version_url", "blocks")
 STATUS_HEADER = """\
 # STATUS — generated
 
-> Regenerated nightly by `gfx906-hub-check.py` (the README blocks are the digest of this file).
-> Hand edits will be overwritten.
+> Regenerated every 15 minutes by `gfx906-hub-check.py`; a run commits only when the table changes.
+> The README blocks are the digest of this file. Hand edits will be overwritten.
 
-_Updated {stamp} UTC._
+_Last data change: {last_change}._
 
 | repo | category | role | ref | head | updated | version | compare |
 |---|---|---|---|---|---|---|---|
@@ -59,6 +60,27 @@ def api(path: str, token: str | None):
             if attempt == ATTEMPTS:
                 raise
         time.sleep(2**attempt)
+
+
+def probe_atom(repo: dict) -> str | None:
+    """Cheap move-probe via the public commits.atom feed (unauthenticated,
+    not subject to API rate limits). Returns the first entry's commit SHA,
+    or None when the feed can't be fetched or parsed — the caller then
+    falls back to the full API poll."""
+    url = f"https://github.com/{repo['owner']}/{repo['name']}/commits.atom"
+    request = urllib.request.Request(url, headers={"User-Agent": "gfx906-hub-check"})
+    text = ""
+    for attempt in range(1, ATTEMPTS + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=20) as feed:
+                text = feed.read(32768).decode("utf-8", "replace")
+            break
+        except (urllib.error.URLError, TimeoutError, OSError):
+            if attempt == ATTEMPTS:
+                return None
+            time.sleep(2**attempt)
+    match = re.search(r"<entry>.*?/commit/([0-9a-f]{40})", text, re.S)
+    return match.group(1) if match else None
 
 
 def poll(repo: dict, token: str | None) -> dict | None:
@@ -100,6 +122,11 @@ def refresh(tracked: dict, old: dict, today: str, token: str | None) -> tuple[di
     active = [repo for repo in tracked["repos"] if repo.get("status", "active") == "active"]
     changed, unreachable = [], []
     for repo in active:
+        seen = state.get(repo["id"])
+        if (repo.get("ref") or "HEAD") == "HEAD" and seen and seen.get("sha"):
+            probe = probe_atom(repo)
+            if probe is not None and probe == seen["sha"]:
+                continue  # no move since last run — entry stays byte-identical
         polled = poll(repo, token)
         if polled is None:
             unreachable.append(repo["id"])
@@ -157,8 +184,8 @@ def render_blocks(tracked: dict, state: dict) -> str:
     return out
 
 
-def render_status(tracked: dict, state: dict, stamp: str) -> str:
-    out = STATUS_HEADER.format(stamp=stamp)
+def render_status(tracked: dict, state: dict, last_change: str) -> str:
+    out = STATUS_HEADER.format(last_change=last_change)
     for repo in tracked["repos"]:
         entry = state.get(repo["id"])
         if entry is None:
@@ -207,24 +234,26 @@ def add_to_changelog(text: str, today: str, changed: list[dict], state: dict) ->
 def main() -> None:
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     now = datetime.now(timezone.utc)
-    today, stamp = now.strftime("%Y-%m-%d"), now.strftime("%Y-%m-%d %H:%M")
+    today = now.strftime("%Y-%m-%d")
 
     tracked = json.loads(TRACKED.read_text(encoding="utf-8"))
     old = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {}
     state, changed = refresh(tracked, old, today, token)
     unreachable = state["_unreachable"]
+    last_change = today if changed else (old.get("_last_change") or today)
+    state["_last_change"] = last_change
 
     readme = README.read_text(encoding="utf-8")
     readme = replace_block(readme, "STATUS", render_blocks(tracked, state))
     footer = (
-        f"_Hub status last refreshed: {stamp} UTC — {state['_tracked_count']} tracked,"
+        f"_Hub status last updated: {last_change} — {state['_tracked_count']} tracked,"
         f" {len(unreachable)} unreachable._\n"
     )
     readme = replace_block(readme, "FOOTER", footer)
 
     STATE.write_text(json.dumps(state, indent=1) + "\n", encoding="utf-8")
     README.write_text(readme, encoding="utf-8")
-    STATUS.write_text(render_status(tracked, state, stamp), encoding="utf-8")
+    STATUS.write_text(render_status(tracked, state, last_change), encoding="utf-8")
     if changed:
         changelog = CHANGELOG.read_text(encoding="utf-8")
         CHANGELOG.write_text(add_to_changelog(changelog, today, changed, state), encoding="utf-8")
@@ -232,7 +261,7 @@ def main() -> None:
     if changed:
         message = f"hub: {len(changed)} changed ({', '.join(repo['id'] for repo in changed)})"
     else:
-        message = "hub: nightly status update (refresh)"
+        message = "hub: no changes (nothing committed)"
     for repo_id in unreachable:
         print(f"::warning::unreachable: {repo_id}")
     print(message)

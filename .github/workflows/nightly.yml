@@ -1,8 +1,8 @@
-name: Nightly status update
+name: Status update (15-min poll)
 
 on:
   schedule:
-    - cron: "10 8 * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
