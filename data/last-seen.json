@@ -105,10 +105,10 @@
   "version_url": "https://github.com/phantomic12/ML-gfx906/releases/tag/20260802001858"
  },
  "hboyd2003-Strata": {
-  "sha": "5958a5812c2f360ea58af3470200f400dc067bdb",
-  "prev": "3b54d622e34cd26ae81e10c754e872d25c8e32b3",
+  "sha": "f89e2ce1e5f627d79c4f143d012688e275ff675c",
+  "prev": "5958a5812c2f360ea58af3470200f400dc067bdb",
   "date": "2026-11-24",
-  "pushed_at": "2026-11-18",
+  "pushed_at": "2026-11-24",
   "version": "v0.2.13+0.5-gfx906",
   "version_url": "https://github.com/hboyd2003/Strata/releases/tag/v0.2.13%2B0.5-gfx906"
  },
@@ -149,5 +149,6 @@
   "pushed_at": "2026-11-23",
   "version": "gfx906-v0.7.0",
   "version_url": "https://github.com/rayakame/llama.cpp-gfx906/releases/tag/gfx906-v0.7.0"
- }
+ },
+ "_last_change": "2026-11-24"
 }
