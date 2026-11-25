@@ -26,7 +26,7 @@ tracked forks, and the standing setup notes.
 
 | repo | focus | updated | head | version |
 |---|---|---|---|---|
-| [rayakame/llama.cpp-gfx906](https://github.com/rayakame/llama.cpp-gfx906) | single-MI50 llama.cpp for Qwen3.8 27B with MTP drafting — kernels tuned for every quant that fits (Q8_0 down to IQ3) | 2026-11-25 | `97d72a3d` | [gfx906-v0.7.0](https://github.com/rayakame/llama.cpp-gfx906/releases/tag/gfx906-v0.7.0) |
+| [rayakame/llama.cpp-gfx906](https://github.com/rayakame/llama.cpp-gfx906) | single-MI50 llama.cpp for Qwen3.8 27B with MTP drafting — kernels tuned for every quant that fits (Q8_0 down to IQ3) | 2026-11-25 | `0e14dfab` | [gfx906-v0.7.1](https://github.com/rayakame/llama.cpp-gfx906/releases/tag/gfx906-v0.7.1) |
 | [AlwaysLearning-dev/gfx906-llama-cpp](https://github.com/AlwaysLearning-dev/gfx906-llama-cpp/tree/dev_v2) | 2× MI50 tensor-split llama.cpp — Qwen3.8-27B Q8_0 + DFlash2 drafter; dev_v2 = Q8_0 weight repack (~434 pp tok/s) | 2026-11-20 | `36e84ddb` | — |
 | [mxxm-t/mx-llama.cpp](https://github.com/mxxm-t/mx-llama.cpp) | llama.cpp mx builds — Qwen3 / 3.5 GGUF quants (Q8 to Q4) on 16GB | 2026-11-18 | `557a6068` | b12717 |
 | [sixvolts/llamacpp-gfx906-furnace](https://github.com/sixvolts/llamacpp-gfx906-furnace) | retuned llama.cpp — 177B Qwen3.8-Flash-Next MoE (UD-Q4_K_XL) layer-split across 4× MI50, GCN weight repack + DPP warp reductions | 2026-11-10 | `d2b95132` | gfx906-perf-b9607-5013b9f |

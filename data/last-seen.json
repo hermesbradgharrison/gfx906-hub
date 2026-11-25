@@ -143,12 +143,12 @@
   "pushed_at": "2026-11-20"
  },
  "rayakame-llama.cpp-gfx906": {
-  "sha": "97d72a3dd2171813ba9b2ab3fcce3d7e6a5ddb5e",
-  "prev": "5bccb55291f1ce9d506d766e1d8274e27ff5d4bb",
+  "sha": "0e14dfab5d907e4290da252488f46adae50ebc5d",
+  "prev": "97d72a3dd2171813ba9b2ab3fcce3d7e6a5ddb5e",
   "date": "2026-11-25",
   "pushed_at": "2026-11-25",
-  "version": "gfx906-v0.7.0",
-  "version_url": "https://github.com/rayakame/llama.cpp-gfx906/releases/tag/gfx906-v0.7.0"
+  "version": "gfx906-v0.7.1",
+  "version_url": "https://github.com/rayakame/llama.cpp-gfx906/releases/tag/gfx906-v0.7.1"
  },
  "_last_change": "2026-11-25"
 }
