@@ -38,7 +38,7 @@ tracked forks, and the standing setup notes.
 
 | repo | focus | updated | head | version |
 |---|---|---|---|---|
-| [hboyd2003/Strata](https://github.com/hboyd2003/Strata) | Strata tuned for gfx906 — rocBLAS autotune, prompt-attention env (~+7% prefill) | 2026-11-24 | `f89e2ce1` | [v0.2.13+0.5-gfx906](https://github.com/hboyd2003/Strata/releases/tag/v0.2.13%2B0.5-gfx906) |
+| [hboyd2003/Strata](https://github.com/hboyd2003/Strata) | Strata tuned for gfx906 — rocBLAS autotune, prompt-attention env (~+7% prefill) | 2026-11-26 | `3053e831` | [v0.2.22+0.6-gfx906](https://github.com/hboyd2003/Strata/releases/tag/v0.2.22%2B0.6-gfx906) |
 | [mixa3607/ML-gfx906](https://github.com/mixa3607/ML-gfx906/blob/master/strata/README.md) | the base monorepo — vllm, llama.cpp, strata (+ more) for gfx906 | 2026-11-21 | `5a408082` | [20261123223821](https://github.com/mixa3607/ML-gfx906/releases/tag/20261123223821) |
 
 ### llaminar
@@ -73,5 +73,5 @@ power caps, clocks), original vs modified PCB, amdvbflash flashing, and UPP over
 [CHANGELOG.md](CHANGELOG.md) — every repo move, newest first.
 
 <!-- HUB-FOOTER:BEGIN -->
-_Hub status last updated: 2026-11-25 — 17 tracked, 0 unreachable._
+_Hub status last updated: 2026-11-26 — 17 tracked, 0 unreachable._
 <!-- HUB-FOOTER:END -->
