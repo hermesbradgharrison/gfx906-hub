@@ -3,7 +3,7 @@
 > Regenerated every 15 minutes by `gfx906-hub-check.py`; a run commits only when the table changes.
 > The README blocks are the digest of this file. Hand edits will be overwritten.
 
-_Last data change: 2026-11-26._
+_Last data change: 2026-11-28._
 
 | repo | category | role | ref | head | updated | version | compare |
 |---|---|---|---|---|---|---|---|
@@ -12,7 +12,7 @@ _Last data change: 2026-11-26._
 | ai-infos/vllm-gfx906-mobydick | vllm | gfx906 vLLM fork (mobydick — ai-infos branch; Radeon VII / MI50 / MI60) | `HEAD` | `e7b96a5e` | 2026-10-08 | - | - |
 | 0c33/mi50-vllm-lab | vllm | MI50 vLLM lab — 27B on 2x MI50, gfx906_skinny 4-bit kernels | `HEAD` | `eb3b1728` | 2026-10-26 | - | - |
 | ttdxq/gfx906-vllm | vllm | open .cu gfx906 vLLM fork (GDN decode stack) | `HEAD` | `3eeb931d` | 2026-11-08 | [rccl-gfx906-2.27.7-rocm7.2.4](https://github.com/ttdxq/gfx906-vllm/releases/tag/rccl-gfx906-2.27.7-rocm7.2.4) | - |
-| mixa3607/ML-gfx906 | vllm, llamacpp, strata | gfx906 ML base (upstream of the cassettesgoboom FA work) — single monorepo; row appears under each tracked project, linking to that project's subproject | `HEAD` | `5f6913c5` | 2026-11-23 | [20261123223821](https://github.com/mixa3607/ML-gfx906/releases/tag/20261123223821) | https://github.com/mixa3607/ML-gfx906/compare/ab2a93dedafc6c4cb222008f478b4032bb22f2ac...5f6913c583110a559407142f93577a1e956c9f91 |
+| mixa3607/ML-gfx906 | vllm, llamacpp, strata | gfx906 ML base (upstream of the cassettesgoboom FA work) — single monorepo; row appears under each tracked project, linking to that project's subproject | `HEAD` | `38eeee91` | 2026-11-28 | [20261123223821](https://github.com/mixa3607/ML-gfx906/releases/tag/20261123223821) | https://github.com/mixa3607/ML-gfx906/compare/5f6913c583110a559407142f93577a1e956c9f91...38eeee914ad34bc9d89cb910778ba93efb3981df |
 | mxxm-t/mx-llama.cpp | llamacpp | llama.cpp fork (mx build) | `HEAD` | `557a6068` | 2026-11-18 | b12717 | https://github.com/mxxm-t/mx-llama.cpp/compare/cdc81dae4f4362e0aeaeb99c90622b9de4504d53...557a6068f4c5c8fb0ba9982d2a912eeeb2dcaa08 |
 | joochung/vllm-gfx906-mobydick | vllm | gfx906 vLLM fork (IMJoo's mobydick line — PLE CPU-offload integration + QSA-FN branches) | `HEAD` | `524ac6f2` | 2026-10-17 | v0.30-first-good-boot | - |
 | anng-phtk/rocm-vega-llama.cpp | llamacpp | llama.cpp on ROCm 7.2 for Vega 64 (gfx900) + MI50 (gfx906) — mixed-GPU inference | `HEAD` | `602a7b55` | 2026-08-25 | - | - |
