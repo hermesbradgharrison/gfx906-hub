@@ -209,6 +209,17 @@
    "role": "llama.cpp tuned for Qwen3.8 27B on the AMD Instinct MI50 (gfx906)",
    "status": "active",
    "category": "llamacpp"
+  },
+  {
+   "id": "G0ldd1-mi50-playground",
+   "focus": "hand-written gfx906 kernels as patches: Inkling 2 Mini on maya-ik2 (Strata), one MI50 decode 42 -> 83 tok/s, ~200 tok/s with 8 slots",
+   "owner": "G0ldd1",
+   "name": "mi50-playground",
+   "remote": "https://github.com/G0ldd1/mi50-playground",
+   "ref": "HEAD",
+   "role": "gfx906 kernel patches against pinned upstream engines, each with an off/on bench script",
+   "status": "active",
+   "category": "strata"
   }
  ]
 }
